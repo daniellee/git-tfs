@@ -208,7 +208,7 @@ namespace Sep.Git.Tfs.VsFake
 
         public bool MatchesUrl(string tfsUrl)
         {
-            throw new NotImplementedException();
+            return Url.Equals(tfsUrl, StringComparison.OrdinalIgnoreCase) || LegacyUrls.Contains(tfsUrl, StringComparison.OrdinalIgnoreCase);
         }
 
         public bool HasShelveset(string shelvesetName)

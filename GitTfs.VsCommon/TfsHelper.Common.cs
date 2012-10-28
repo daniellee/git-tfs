@@ -474,7 +474,7 @@ namespace Sep.Git.Tfs.VsCommon
 
         public bool MatchesUrl(string tfsUrl)
         {
-            return Url == tfsUrl || LegacyUrls.Contains(tfsUrl);
+            return Url.Equals(tfsUrl, StringComparison.OrdinalIgnoreCase) || LegacyUrls.Contains(tfsUrl, StringComparison.OrdinalIgnoreCase);
         }
 
         public IEnumerable<IWorkItemCheckinInfo> GetWorkItemInfos(IEnumerable<string> workItems, TfsWorkItemCheckinAction checkinAction)
